@@ -1,8 +1,20 @@
+import Banner from "./sections/Banner"
+import Header from "./sections/Header"
+import Main from "./sections/Main"
+import Footer from "./sections/Footer"
 
 function App() {
 
   return (
-   <h1>Welcome</h1>
+   
+    <>
+      <Header />
+      <Banner />
+      <Main />
+      <Footer />
+    </>
+
+
   )
 }
 
