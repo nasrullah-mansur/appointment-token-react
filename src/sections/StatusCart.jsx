@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function StatusCart(props) {
   return (
     <div className="bg-white shadow-sm rounded-lg overflow-hidden mb-6">
@@ -12,6 +13,7 @@ function StatusCart(props) {
                     <p className="text-xl">Nasrullah Mansur</p>
                     <span>01828767676</span>
                 </div>
+                
                 <button className={`${props.bgColor} ml-auto text-white text-lg font-bold px-3`}>Token No 01</button>
             </li>
             
