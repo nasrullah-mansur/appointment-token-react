@@ -1,5 +1,5 @@
 import { useState } from "react";
-import H1 from "../components/H1";
+import H1 from "../src/components/H1";
 
 
 function FormArea() {
