@@ -2,7 +2,13 @@ import Button from "../../components/Button"
 import Search from "./Search"
 
 
-function Header({onAscending, onDescending}) {
+function Header({onAscending, onDescending, onSearch}) {
+
+  // let searchHandler = (test) => {
+  //   onSearch(test);
+  // }
+
+
   return (
     <div className="flex justify-between items-center">
           <div className="flex">
@@ -10,7 +16,7 @@ function Header({onAscending, onDescending}) {
             <Button onClick={() => onDescending()} className="btn-accent mr-3">Descending</Button>
           </div>
 
-            <Search />
+            <Search onSearch={(test) => onSearch(test)} />
           
         </div>
   )

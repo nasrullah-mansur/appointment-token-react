@@ -39,10 +39,14 @@ function Layout() {
       setData(updateData);
     }
 
+    let searchHandler = (text) => {
+      console.log(text);
+    }
+
   return (
     <div className="w-full pb-8 min-h-screen bg-slate-300 pt-6">
       <div className="max-w-6xl m-auto pt-6 bg-white p-5 rounded shadow ">
-        <Header onAscending={ascendingHandler} onDescending={descendingHandler} />
+        <Header onSearch={searchHandler} onAscending={ascendingHandler} onDescending={descendingHandler} />
 
         {
             data.length == 0 
