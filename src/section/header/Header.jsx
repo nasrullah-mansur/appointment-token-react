@@ -16,7 +16,7 @@ function Header({onAscending, onDescending, onSearch}) {
             <Button onClick={() => onDescending()} className="btn-accent mr-3">Descending</Button>
           </div>
 
-            <Search onSearch={(test) => onSearch(test)} />
+            <Search onSearch={(text) => onSearch(text)} />
           
         </div>
   )

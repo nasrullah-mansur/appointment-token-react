@@ -1,17 +1,21 @@
-import { useState } from "react"
+
 
 function Search({onSearch}) {
-  let [text, setText] = useState('');
 
   // let keyUpHandler = (e) => {
   //   setText(e.target.value);
   // }
 
-  onSearch(text);
+  let searchHandler = (e) => {
+    let text = e.target.value;
+    onSearch(text);
+    
+  }
+  
 
   return (
     <label className="input input-bordered flex items-center gap-2">
-            <input onKeyUp={(e) => setText(e.target.value)} type="text" className="grow" placeholder="Search" />
+            <input onKeyUp={searchHandler} type="text" className="grow" placeholder="Search" />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"

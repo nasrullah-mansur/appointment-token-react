@@ -16,6 +16,7 @@ function Loading() {
 function Layout() {
 
     let [data, setData] = useState([]);
+    let [searchText, setSearchText] = useState('');
 
     useEffect(() => {
         async function getData() {
@@ -39,21 +40,27 @@ function Layout() {
       setData(updateData);
     }
 
-    let searchHandler = (text) => {
-      console.log(text);
-    }
+    // let searchHandler = (text) => {
+    //   setSearchText(text);
+    // }
+
+   
 
   return (
     <div className="w-full pb-8 min-h-screen bg-slate-300 pt-6">
       <div className="max-w-6xl m-auto pt-6 bg-white p-5 rounded shadow ">
-        <Header onSearch={searchHandler} onAscending={ascendingHandler} onDescending={descendingHandler} />
+        <Header onSearch={(text) => setSearchText(text)} onAscending={ascendingHandler} onDescending={descendingHandler} />
 
         {
             data.length == 0 
             ? 
             <Loading />
             : 
-            <Gallery galleryItemsData={data} />
+            <Gallery galleryItemsData={
+              data.filter(item => {
+                return item.name.toLowerCase().includes(searchText.toLocaleLowerCase())
+              })
+            } />
         }
         
       </div>

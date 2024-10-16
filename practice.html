@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<body>
+    
+    <ul>
+
+    </ul>
+
+
+    <script>
+        let myUl = document.querySelector('ul');
+        let output = [];
+
+        for(let i = 0; i <= 120; i++) {
+            // myUl.innerHTML += `<li>Item No: ${i}</li>`;
+            output.push(`<li>Item No: ${i}</li>`);
+        }
+
+
+        // let newArr = [
+        //     ...output.slice(0,100),
+        //     '<li>this is another one</li>',
+        //     ...output.slice(101),
+        // ]
+
+        let newArr = output.map((i, index) => {
+            if(index === 100) {
+                return '<li>this is another one</li>'
+            } else {
+                return i;
+            }
+        });
+
+        output = newArr;
+
+        myUl.innerHTML = output.join('');
+
+    </script>
+</body>
+</html>

@@ -1,10 +1,10 @@
-import Layout from "./layout/Layout"
-
+import Layout from './layout/Layout'
 
 function App() {
-  return (
+  return(
     <Layout />
   )
 }
+
 
 export default App
